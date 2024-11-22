@@ -98,15 +98,15 @@ function ProductDisplay(DynamicData,who="productsContId"){
     let currData=" ";
 DynamicData.forEach((data,index)=>{
     if(who==="productsContId"){
-  currData +=`  <div class=" bg-gray-200 border flex flex-col items-center p-4 gap-2"; >
-     <img src="${data.img}" class="h-64" style="width: 95%;">
+  currData +=`  <div class=" bg-white  flex flex-col items-center p-1 gap-2"; >
+     <img src="${data.img}" class="h-56 md:h-64 bg-gray-100" style="width: 95%;">
      <h1 class="font-bold text-center">${data.name}</h1>
      <p>rs ${data.price}</p>
      <button class="bg-blue-950 text-white p-3" onclick="AddToCart(${index})">Add To Cart</button>
     </div>`
     } else if(who==="cart"){
-        currData +=`  <div class=" bg-gray-100 border border-black flex flex-col items-center p-2 gap-2"; >
-        <img src="${data.img}" class="h-64" style="width: 95%;">
+        currData +=`  <div class=" bg-white flex flex-col items-center p-1 gap-2 "; >
+        <img src="${data.img}" class="h-56 md:h-64 bg-gray-100" style="width:95%;">
         <h1 class="font-bold">${data.name}</h1>
         <p>rs ${data.price}</p>
         <button class="bg-blue-950 text-white p-3" onclick="RemoveFromCart(${index})">Remove From Cart</button>
