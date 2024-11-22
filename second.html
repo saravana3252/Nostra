@@ -100,13 +100,19 @@ html,body{
     <div class="flex justify-center">
     <input id="inpId" onkeyup="searchData()" type="search" placeholder="search for products" class="w-11/12 p-2 m-2 outline-none md:w-11/12 border border-black">
 </div>
+
 <div class="flex justify-end pl-2  ml-3 m-2 lg:mr-8 lg:m-2 lg:pr-4">
+    <div class="bg-red-900 w-36 flex items-center justify-center text-white cursor-pointer mr-2 ">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <a class="px-2 " href="#cart">CART</a>
+    </div>
+    
     <div class="bg-blue-900 w-36 flex items-center justify-center text-white cursor-pointer mr-2 " onclick="filter()">
     <i class="fa-solid fa-filter"></i>
     <p class="px-2 ">filter</p>
 </div>
 
-    <select id="sortId" class="w-4/5 p-2 m-1  border border-black md:w-1/5" onchange="sort()">
+    <select id="sortId" class="w-[75%] p-3 m-1  border border-black md:w-1/5" onchange="sort()">
         <option>Select</option>
         <option value="LowToHigh">Price: Low to High</option>
         <option value="HighToLow">Price: High to low</option>
