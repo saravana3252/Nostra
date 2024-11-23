@@ -128,7 +128,7 @@ function AddToCart(index){
     cart.push(productData[index]);
     // alert("product added to cart")
     ProductDisplay(cart,"cart")
-    cartLeng.innerHTML=`<p class="m-2" >${cart.length}</p>`
+    cartLeng.innerHTML=`<p class="m-2 font-semibold w-4 text-center" >${cart.length}</p>`
     console.log(cart)
 }
 
@@ -354,3 +354,15 @@ document.addEventListener("scroll",()=>{
         navbar.classList.remove("scrollY")
     }
 })
+
+
+
+function Like(img){
+    let currentSrc = img.src.split('/').pop();
+    if(currentSrc === "blackheart.png"){
+        img.src="./images/redheart.png"
+    }
+    else{
+        img.src="./images/blackheart.png"
+    }
+}
