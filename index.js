@@ -124,15 +124,18 @@ window.onload = function () {
 }
 
 function AddToCart(index){
+    let cartLeng=document.getElementById("cartLeng")
     cart.push(productData[index]);
-    alert("product added to cart")
+    // alert("product added to cart")
     ProductDisplay(cart,"cart")
+    cartLeng.innerHTML=`<p class="m-2" >${cart.length}</p>`
     console.log(cart)
 }
 
 function RemoveFromCart(index){
     cart.splice(index,1)
     ProductDisplay(cart,"cart")
+     cartLeng.innerHTML=`<p class="m-2" >${cart.length}</p>`
     console.log(cart)
 }
 
