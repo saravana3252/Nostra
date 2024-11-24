@@ -20,6 +20,7 @@ let productData=[
     id:1,
     img:"./images/roundNeck.png",
     name:"Puma Round Neck",
+    category:"Round Neck",
     pInfo:"Puma Men's Regular Fit T-Shirt with Graphic Print Logo",
     price:499,
     stock:"old"
@@ -28,6 +29,7 @@ let productData=[
     id:2,
     img:"./images/shirt.png",
     name:"Allen Solly Shirt",
+    category:"Shirt",
     pInfo:"Mens Collared Button Up Regular Fit Shirt For Casual Wear ",
     price:1099,
     stock:"new"
@@ -36,6 +38,7 @@ let productData=[
     id:3,
     img:"./images/tshirt1.png",
     name:"CSK JERSEY",
+    category:"T-Shirt",
     pInfo:"Sports Cricket Team Official New CSK Dhoni 7 Jersey IPL 2024/2025",
     price:999,
     stock:"new"
@@ -45,6 +48,7 @@ let productData=[
     id:4,
     img:"./images/tshirt.png",
     name:"Puma T-Shirt",
+    category:"T-Shirt",
     pInfo:"Puma Men's Regular Fit T-Shirt with Graphic Print Logo",
     price:599,
     stock:"new"
@@ -53,6 +57,7 @@ let productData=[
     id:5,
     img:"./images/roundNeck2.png",
     name:"Souled Store Round Neck",
+    category:"Round Neck",
     pInfo:"The Souled Store Official Spider-Man: Miles Logo Men T-Shirts",
     price:699,
     stock:"The Souled Store Official Spider-Man: Miles Logo Men T-Shirts"
@@ -61,6 +66,7 @@ let productData=[
     id:6,
     img:"./images/pant.png",
     name:"Levis Pant",
+    category:"Pant",
     pInfo:"Mens Styled Slim Tapered Fit Mid Rise Jeans For casual Wear",
     price:1499,
     stock:"old"
@@ -69,6 +75,7 @@ let productData=[
     id:7,
     img:"./images/roundNeck1.png",
     name:"Adidas Round Neck",
+    category:"Round Neck",
     pInfo:"Adidas Men's Regular Fit T-Shirt with Graphic Print Logo",
     price:1999,
     stock:"new"
@@ -77,6 +84,7 @@ let productData=[
     id:8,
     img:"./images/shirt1.png",
     name:"Jack & Jones T-Shirt",
+    category:"T-Shirt",
     pInfo:"Jack & Jones Men's Abstract Print Regular Fit Resort Collar Casual Shirt",
     price:1699,
     stock:"old"
@@ -99,17 +107,17 @@ function ProductDisplay(DynamicData,who="productsContId"){
 DynamicData.forEach((data,index)=>{
     if(who==="productsContId"){
   currData +=`  <div class=" bg-white  flex flex-col items-center p-1 gap-2"; >
-     <img src="${data.img}" class="h-56 md:h-64 bg-gray-100" style="width: 95%;">
+     <img src="${data.img}" class="h-56 md:h-64 bg-gray-100 w-[95%] lg:w-[90%]">
      <h1 class="font-bold text-center">${data.name}</h1>
      <p>rs ${data.price}</p>
-     <button class="bg-blue-950 text-white p-3" onclick="AddToCart(${index})">Add To Cart</button>
+     <button class="bg-blue-950 text-white p-3" onclick="AddToCart(${data.id})">Add To Cart</button>
     </div>`
     } else if(who==="cart"){
         currData +=`  <div class=" bg-white flex flex-col items-center p-1 gap-2 "; >
-        <img src="${data.img}" class="h-56 md:h-64 bg-gray-100" style="width:95%;">
+        <img src="${data.img}" class="h-56 md:h-64 bg-gray-100 w-[95%] lg:w-[90%]">
         <h1 class="font-bold">${data.name}</h1>
         <p>rs ${data.price}</p>
-        <button class="bg-blue-950 text-white p-3" onclick="RemoveFromCart(${index})">Remove From Cart</button>
+        <button class="bg-blue-950 text-white p-3" onclick="RemoveFromCart(${data.id})">Remove From Cart</button>
        </div>`
     }
 })
@@ -123,20 +131,22 @@ window.onload = function () {
 
 }
 
-function AddToCart(index){
-    let cartLeng=document.getElementById("cartLeng")
-    cart.push(productData[index]);
-    // alert("product added to cart")
-    ProductDisplay(cart,"cart")
-    cartLeng.innerHTML=`<p class="m-2 font-semibold w-4 text-center" >${cart.length}</p>`
-    console.log(cart)
+function AddToCart(productId){
+    let cartLeng = document.getElementById("cartLeng");
+    const product = productData.find((item) => item.id === productId); 
+    cart.push(product); 
+    ProductDisplay(cart, "cart");
+    cartLeng.innerHTML = `<p class="m-2 font-semibold w-4 text-center">${cart.length}</p>`;
+    console.log(cart);
 }
 
-function RemoveFromCart(index){
-    cart.splice(index,1)
-    ProductDisplay(cart,"cart")
-     cartLeng.innerHTML=`<p class="m-2" >${cart.length}</p>`
-    console.log(cart)
+function RemoveFromCart(productId){
+    cart = cart.filter((cartItem) => cartItem.id !== productId);
+    console.log(cart);
+    ProductDisplay(cart, "cart");
+    let cartLeng = document.getElementById("cartLeng");
+    cartLeng.innerHTML = `<p class="m-2">${cart.length}</p>`;
+    console.log(cart);
 }
 
 
@@ -156,9 +166,7 @@ function checkBox(){
     checkbox.forEach((checkbox) => {
         if (checkbox.checked) {
             const checkboxValue = checkbox.value; 
-            const filteredData = productData.filter((data) => {
-                return data.name === checkboxValue; 
-            });
+            const filteredData = productData.filter((data) => data.category === checkboxValue);
             checkBoxData = checkBoxData.concat(filteredData); 
         }
     });
