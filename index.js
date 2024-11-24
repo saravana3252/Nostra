@@ -136,6 +136,7 @@ function AddToCart(productId){
     const product = productData.find((item) => item.id === productId); 
     cart.push(product); 
     ProductDisplay(cart, "cart");
+    alert("product added to cart")
     cartLeng.innerHTML = `<p class="m-2 font-semibold w-4 text-center">${cart.length}</p>`;
     console.log(cart);
 }
