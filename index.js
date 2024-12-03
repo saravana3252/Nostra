@@ -281,7 +281,11 @@ function stock(){
 
 function filter(){
     let filterDiv=document.getElementById("filtersId");
-    filterDiv.style.left=0;
+    if (filterDiv.style.left === "0px") {
+        filterDiv.style.left = "-100%";
+    } else {
+        filterDiv.style.left = "0px";
+    }
 }
 
 function filterClose(){
