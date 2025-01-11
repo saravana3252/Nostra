@@ -447,7 +447,7 @@ if(registerbtn){
     registerbtn.disabled=true;
 }
 
- fetch("https://nostra-backend.onrender.com/register",{
+ fetch("https://nostra-xvvz.onrender.com/register",{
     method:"POST",
     body:JSON.stringify(userData),
     headers:{
@@ -494,7 +494,7 @@ if(loginbtn){
     loginbtn.disabled=true;
 }
 
- fetch("https://nostra-backend.onrender.com/login",{
+ fetch("https://nostra-xvvz.onrender.com/login",{
     method:"POST",
     body:JSON.stringify(userData),
     headers:{
@@ -521,7 +521,7 @@ if(loginbtn){
         console.log("Data stored in localStorage:", localStorage.getItem("nostra"));
         if(localStorage.getItem("nostra") !== null){
             let user = JSON.parse(localStorage.getItem("nostra"))
-            console.log("User retrieved from localStorage:", user);  // Log the user data
+            console.log("User retrieved from localStorage:", user);  
             Notiflix.Notify.success(`welcome ${user.name}`);
             console.log(user)
             
@@ -548,7 +548,7 @@ if(loginbtn){
     const loginElement1 = document.getElementById("login1");
 
     if (userJSON !== null) {
-        // User is logged in, so log them out
+       
         localStorage.removeItem("nostra");
         Notiflix.Notify.success("You have logged out successfully!");
 
