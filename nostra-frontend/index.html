@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NOSTRA</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="
+        https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/base.min.css
+        " rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="path/to/font-awesome/css/font-awesome.min.css"
+      />
+      <link rel="icon" href="./images/nLogo.jpg">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+       
+        <style>
+            .scrollbar-hide {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; 
+}
+
+
+.navbar.scrollY{
+    background-color: rgb(143, 88, 236);
+    transition: 0.2s;
+}
+.myatagparent.scrollatagY{
+    color: white;
+    
+}
+
+.myatagparent.scrollatagY a:hover{
+    color:rgb(143, 88, 236);
+    
+    background-color: rgb(247, 239, 239);
+    
+}
+
+.myLogin.scrollLoginY{
+    color:white;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+.myLogin.scrollLoginY:hover{
+    color:black;
+    background-color:white ;
+    border: 1px solid blue;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+html,body{
+    scroll-behavior: smooth;
+}
+        </style>
+    </head>
+    <body>
+        <div id="ad" class="p-4 bg-blue-950 text-white flex justify-center items-center transition duration-1000 " onclick="closeAd()">
+            <h1 class="pr-4 text-sm md:text-xl">Sign Up and <span class="text-red-500 font-bold">GET 20% OFF</span> for you your first Order</h1>
+            <button class="border border-white px-3 transition duration-300 hover:bg-red-500 hover:text-black hover:border-opacity-0 font-bold">X</button>
+        </div>
+     <div  class="navbar p-3 flex justify-between px-6 sticky top-0 z-50 bg-white">
+        <div class="flex items-center">
+        <h1 class="font-bold text-2xl"><span class="myspan text-blue-500 italic">N</span>OSTRA</h1>
+    </div>
+    <div id="desktop-div" class="flex justify-center items-center h-9 w-1/6  lg:hidden " onclick="toggleMenu()"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mytoggle text-black size-12 w-9/12 cursor-pointer"> <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /> </svg> </div>
+        <div class="myatagparent justify-center gap-1 w-2/4 hidden lg:flex">
+        <a href="index.html" class="w-2/12 text-center pt-0.5 transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Home</a>
+        <a  href="#newArrivals" class="w-3/12 text-center  pt-0.5  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">New Arrival</a>
+        <a  href="#mostWanted" class="w-3/12 text-center  pt-0.5  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Most Wanted</a>
+        <a  href="second.html" class="w-3/12 text-center  pt-0.5  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Collections</a>
+        <a  href="third.html" class="w-3/12 text-center  pt-0.5  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Contact Us</a>
+    </div>
+   <div  class="myLogin font-semibold border border-blue-600  justify-center items-center px-2 cursor-pointer  transition-all duration-300 hover:bg-blue-700 hover:text-white hidden lg:flex">
+    <p ><i class="fa-solid fa-user pr-2"></i><a id="login" onclick="HandleLogin()">LOGIN</a></p>
+   </div>
+    <div id="mobile-div" class="flex flex-col items-center pt-5 bg-blue-950 text-white gap-5 w-3/5 min-h-screen fixed top-0 -right-full transition-all duration-1000 z-50 lg:hidden">
+        <button class="font-bold p-2 px-4 ml-3 border border-white text-2xl" onclick="closeMenu()">X</button>
+        <a href="index.html" class="w-2/5 pt-1.5 h-10 text-center  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Home</a>
+        <a  href="#newArrivals" class="w-2/4 pt-1.5  h-10  text-center  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">New Arrival</a>
+        <a  href="#mostWanted" class="w-2/4 pt-1.5 h-10  text-center  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Most Wanted</a>
+        <a  href="second.html" class="w-2/4 pt-1.5 h-10  text-center   transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Collections</a>
+        <a  href="third.html" class="w-2/4 pt-1.5 h-10  text-center   transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Contact Us</a>
+        <div  class="myLogin font-semibold border border-blue-600 bg-white text-black  justify-center items-center px-2 py-2 cursor-pointer  transition-all duration-300 hover:bg-black hover:text-white flex">
+            <p ><i class="fa-solid fa-user pr-2"></i><a id="login1" onclick="HandleLogin()">LOGIN</a></p>
+           </div>
+    </div>
+    
+     </div>
+
+
+
+     <div class="w-full flex justify-center">
+        <div class="w-[98%] h-[300px] md:h-[415px] bg-blue-500 flex  overflow-hidden relative">
+            <div class="w-full h-full bg-black bg-opacity-50 lg:bg-opacity-70 absolute top-0 z-20">
+                <div class="w-1/2 absolute top-[20%] left-[25%] flex flex-col items-center gap-3  md:gap-5 md:top-[30%]"><p class="text-4xl hidden lg:flex text-white font-bold text-center">Level up your style with our</p><p class="text-3xl hidden lg:flex md:text-3xl text-center text-white">Summer Collections</p><div class="flex justify-center"><button class="p-3 bg-blue-600 hidden lg:flex text-white w-[100%] lg:w-[100%] font-bold"><a href="second.html">Shop Now</a></button></div> </div>
+                <div id="leftButton" class="absolute top-1/2 left-3 md:left-10 transform -translate-y-1/2 z-30   cursor-pointer">
+                    <i class="fa-solid fa-less-than fa-5x text-white"></i>
+                </div>
+                <div id="rightButton" class="absolute top-1/2 right-3 md:right-10 transform -translate-y-1/2 z-30  cursor-pointer">
+                    <i class="fa-solid fa-greater-than fa-5x text-white"></i>
+                </div>
+            </div>
+            <div id="imgContainer" class="flex transition-all duration-1000 z-10">
+                <img class="myimgClass w-screen" src="./images/banner.webp">
+                <img class="myimgClass  w-screen" src="./images/banner1.avif">
+                <img class="myimgClass  w-screen" src="./images/banner2.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-4">
+        <h1 class="font-bold text-3xl px-5 py-2"><span class="text-red-500 italic">OUR</span>BRANDS</h1>
+        <div class="  grid grid-cols-2 gap-4 px-5 md:grid-cols-4 cursor-pointer">
+           <div class=" pt-[20%] p-2 transition-all duration-300 hover:bg-red-400">
+            <img src="https://www.step.org.uk/app/uploads/2018/07/Puma-logo-PNG-Transparent-Background.png" alt="puma logo">
+           
+        </div>
+          
+        <div class=" pt-[30%] p-4 transition-all duration-300 hover:bg-blue-400">
+            <img src="./images/levisLogo.png" alt="levis logo">
+          
+        </div>
+        <div class=" pt-[22%] p-4 transition-all duration-300 hover:bg-yellow-400">
+            <img src="https://i.pinimg.com/originals/c8/9b/0c/c89b0cd4d787e32b81b61e836ec88c73.png" alt="alien solly logo">
+            
+        </div>
+        <div class=" pt-[10%] p-4 transition-all duration-300  hover:bg-green-400">
+            <img src="./images/adidasLogo.png" alt="adidas logo">
+
+        </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-5 mt-5 ">
+        <h1 class="font-bold text-3xl px-1 py-2 mb-5 md:text-3xl"><span class="text-blue-500 italic">WE PROVIDE BEST</span>CUSTOMER EXPERIENCES</h1>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 text-start">
+            <div class="p-3 pt-5 bg-gray-200 rounded-md">
+                <i class="fa-regular fa-circle-check fa-3x"></i>
+                <h2 class="font-bold pt-2">Original Products</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quibusdam.</p>
+            </div>
+            <div class="p-3 pt-5 bg-gray-200 rounded-md">
+                <i class="fa-regular fa-face-smile fa-3x"></i>
+                <h2  class="font-bold pt-2">Satisfaction Guarantee</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quibusdam.</p>
+            </div>
+            <div class="p-3 pt-5 bg-gray-200 rounded-md">
+                <i class="fa-solid fa-pen fa-3x"></i>
+                <h2  class="font-bold pt-2">New Arrival Everyday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quibusdam.</p>
+            </div>
+            <div class="p-3 pt-5 bg-gray-200 rounded-md">
+                <i class="fa-solid fa-truck-fast fa-3x"></i>
+                <h2  class="font-bold pt-2">Fast & Free Shipping</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quibusdam.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="newArrivals" class="w-full px-5 mt-5">
+        <h1 class="font-bold text-3xl  px-1 py-2 mb-5"><span class="text-red-500 italic">NEW</span>ARRIVALS</h1>
+        <div class="grid grid-cols-2 gap-4  lg:grid-cols-4">
+        <div class="bg-yellow-200 relative ">
+            <div class="bg-black w-full h-full bg-opacity-50 absolute top-0">
+                <a class="absolute top-1/2 left-[20%] md:left-[30%] bg-blue-800 bg-opacity-90 text-white p-2 cursor-pointer" href="second.html">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <img src="./images/tshirt1.png " class="h-56 md:h-80 w-full">
+        </div>
+        <div class="relative">
+            <div class="bg-black w-full h-full bg-opacity-50 absolute top-0">
+                <a class="absolute top-1/2  left-[20%] md:left-[30%] bg-blue-800 bg-opacity-90 text-white p-2 cursor-pointer" href="second.html">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <img src="./images/tshirt.png" class="h-56 md:h-80 w-full">
+        </div>
+        <div class="bg-white md:bg-yellow-200 relative">
+            <div class="bg-black w-full h-full bg-opacity-50 absolute top-0">
+                <a class="absolute top-1/2  left-[20%] md:left-[30%] bg-blue-800 bg-opacity-90 text-white p-2 cursor-pointer" href="second.html">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <img src="./images/shirt.png" class="h-56 md:h-80 w-full">
+        </div>
+         <div class="bg-yellow-200 md:bg-white relative">
+            <div class="bg-black w-full h-full bg-opacity-50 absolute top-0">
+                <a class="absolute top-1/2  left-[20%] md:left-[30%] bg-blue-800 bg-opacity-90 text-white p-2 cursor-pointer" href="second.html">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <img src="./images/roundNeck.png" class="h-56 md:h-80 w-full">
+        </div>
+    </div>
+    </div>
+
+
+    <div id="mostWanted" class="w-full px-5 mt-5">
+        <h1 class="font-bold text-3xl px-1 py-2 mb-5">
+            <span class="text-blue-500 italic">MOST</span>WANTED
+        </h1>
+        
+        <div class="flex overflow-x-auto scrollbar-hide  space-x-4">
+           
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img  class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/f1.jpg" class="w-full h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img  class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/n1.jpg" class="w-full h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img   class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/n3.jpg" class="w-full  h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img  class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/n4.jpg" class="w-full  h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img   class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/n7.jpg" class="w-full  h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img  class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/n8.jpg" class="w-full  h-full">
+            </div>
+            <div class="bg-yellow-200 flex-shrink-0 w-[300px] relative">
+                <div class=" bg-red-500 py-2 px-6 absolute top-0 left-0 text-2xl text-white font-bold">SALE</div>
+                <img  class="myImgClass absolute bottom-4 right-4 w-[15%] h-15 cursor-pointer" src="./images/blackheart.png"  onclick="Like(this)" >
+                <img src="./images/f7.jpg" class="w-full  h-full">
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-5 my-5">
+        <div class="bg-gray-800 flex-col md:flex md:flex-row">
+            <div class="w-[100%] p-5 md:w-[50%] flex justify-center">
+            <img src="./images/offer.jpg">
+        </div>
+        <div class="flex flex-col justify-center items-center p-4 gap-4 text-white w-[100%] md:w-[50%] md:items-start">
+            <p class="font-bold text-4xl md:text-5xl">Limited Offer</p>
+            <p class="text-2xl text-center md:text-3xl md:text-start">Get 35% OFF for the first 30 Customers</p>
+            <button class="bg-gray-300 text-gray-800 p-4 rounded-md font-semibold">SHOP NOW <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+            
+        </div>
+    </div>
+
+
+</div>
+<div class="bg-blue-950 p-3 pb-14" >
+<div class="text-center text-white p-2">
+  <h1 class="font-bold text-3xl italic"><span class="text-blue-500">CUSTOMERS</span> REVIEW</h1>
+</div>
+<div class="md:flex">
+<div class="m-3 p-2  bg-blue-800 shadow-lg">
+  <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae inventore nisi, nesciunt, sed omnis porro excepturi quis officia iusto voluptatibus, optio facere. Quae maxime aliquid animi veniam odit cumque provident!</p>
+  <div class="flex mt-5">
+    <h2><svg xmlns="http://www.w3.org/2000/svg" class="size-10" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 494 511.5"><path fill="#D9E9F0" fill-rule="nonzero" d="M246.999 0c139.846 0 247 118.492 247 255.749 0 137.286-107.146 255.751-247 255.751C107.136 511.5 0 393.041 0 255.749 0 119.253 106.347 0 246.999 0z"/><path fill="#194794" fill-rule="nonzero" d="M443.262 410.755c-44.365 60.337-114.245 100.375-195.179 100.731a485.973 485.973 0 01-10.864-.202c-77.469-3.082-144.112-42.601-186.864-101.048 14.588-29.09 45.279-46.423 76.205-50.56 31.076-4.154 56.937-8.371 67.876-45.937 2.831 2.48 5.803 4.983 8.835 7.677 28.308 25.167 60.205 26.261 87.478-.041 2.24-2.168 4.433-4.208 6.53-6.193 13.959 31.067 46.917 36.552 74.708 41.926 28.807 5.565 57.181 26.462 71.275 53.647z"/><path fill="#D2A75F" fill-rule="nonzero" d="M297.279 315.189c7.303 16.248 19.804 25.504 34.034 31.396-48.137 35.317-114.594 33.276-164.102 3.093 14.996-8.076 22.505-19.772 27.209-35.947 2.83 2.479 5.812 4.982 8.849 7.685 28.31 25.169 60.208 26.261 87.481-.04 2.24-2.168 4.432-4.209 6.529-6.187z"/><path fill="#DBB26F" fill-rule="nonzero" d="M249.676 372.686c-28.788.127-57.743-7.941-82.465-23.008 14.94-8.044 22.641-19.923 27.217-35.947 2.838 2.479 5.804 4.982 8.841 7.685 14.869 13.218 30.742 19.795 46.407 19.253v32.017z"/><path fill="#E9BE79" d="M149.695 229.121c3.736-10.692 12.422-7.254 24.8-2.737-4.944-22.418.89-39.929 18.442-52.069 37.446-25.908 54.37-3.733 94.957-36.414 23.316 11.743 44.177 31.595 33.547 93.617 11.252-8.527 27.477-7.732 22.374 11.156l-6.972 19.747c-1.667 4.726-2.782 6.44-8.754 6.119-2.64-.14-5.293-1.156-7.94-2.906 2.445 29.138-11.701 38.645-29.404 55.732-27.267 26.312-59.166 25.226-87.468.048-16.578-14.745-31.301-23.7-32.035-54.014-4.3 1.317-8.362 1.557-11.912-.461-7.072-4.025-9.648-15.739-10.035-23.243-.154-3.015-.026-11.503.4-14.575z"/><path fill="#F2CD8C" d="M149.696 229.121c3.739-10.693 12.419-7.251 24.799-2.737l-.111-.534.111.061c6.452-67.735 40.082-57.55 75.178-66.2v180.957c-15.661.548-31.528-6.024-46.398-19.254-16.577-14.745-31.301-23.697-32.031-54.012-4.297 1.314-8.364 1.555-11.911-.463-10.301-5.863-11.132-27.064-9.637-37.818z"/><path fill="#462917" d="M128.296 133.328c54.61-67.481 117.552-104.183 164.815-44.153 57.919 3.041 78.011 97.546 29.434 134.416 3.891-51.331-11.304-74.352-34.8-85.921-44.719 48.763-104.421-4.43-113.25 88.238l-21.432-11.162c-2.128-26.578 4.097-72.688-24.767-81.418z"/></svg></h2>
+    <h2 class="px-3 py-2 text-white font-bold">JOHN</h2>
+  </div>
+</div>
+<div class="m-3  p-2  bg-yellow-800 shadow-lg">
+  <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae inventore nisi, nesciunt, sed omnis porro excepturi quis officia iusto voluptatibus, optio facere. Quae maxime aliquid animi veniam odit cumque provident!</p>
+  <div class="flex mt-5">
+    <h2><svg xmlns="http://www.w3.org/2000/svg" class="size-10" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 494 511.5"><path fill="#D9E9F0" fill-rule="nonzero" d="M246.999 0c139.846 0 247 118.492 247 255.749 0 137.286-107.146 255.751-247 255.751C107.136 511.5 0 393.041 0 255.749 0 119.253 106.347 0 246.999 0z"/><path fill="#194794" fill-rule="nonzero" d="M443.262 410.755c-44.365 60.337-114.245 100.375-195.179 100.731a485.973 485.973 0 01-10.864-.202c-77.469-3.082-144.112-42.601-186.864-101.048 14.588-29.09 45.279-46.423 76.205-50.56 31.076-4.154 56.937-8.371 67.876-45.937 2.831 2.48 5.803 4.983 8.835 7.677 28.308 25.167 60.205 26.261 87.478-.041 2.24-2.168 4.433-4.208 6.53-6.193 13.959 31.067 46.917 36.552 74.708 41.926 28.807 5.565 57.181 26.462 71.275 53.647z"/><path fill="#D2A75F" fill-rule="nonzero" d="M297.279 315.189c7.303 16.248 19.804 25.504 34.034 31.396-48.137 35.317-114.594 33.276-164.102 3.093 14.996-8.076 22.505-19.772 27.209-35.947 2.83 2.479 5.812 4.982 8.849 7.685 28.31 25.169 60.208 26.261 87.481-.04 2.24-2.168 4.432-4.209 6.529-6.187z"/><path fill="#DBB26F" fill-rule="nonzero" d="M249.676 372.686c-28.788.127-57.743-7.941-82.465-23.008 14.94-8.044 22.641-19.923 27.217-35.947 2.838 2.479 5.804 4.982 8.841 7.685 14.869 13.218 30.742 19.795 46.407 19.253v32.017z"/><path fill="#E9BE79" d="M149.695 229.121c3.736-10.692 12.422-7.254 24.8-2.737-4.944-22.418.89-39.929 18.442-52.069 37.446-25.908 54.37-3.733 94.957-36.414 23.316 11.743 44.177 31.595 33.547 93.617 11.252-8.527 27.477-7.732 22.374 11.156l-6.972 19.747c-1.667 4.726-2.782 6.44-8.754 6.119-2.64-.14-5.293-1.156-7.94-2.906 2.445 29.138-11.701 38.645-29.404 55.732-27.267 26.312-59.166 25.226-87.468.048-16.578-14.745-31.301-23.7-32.035-54.014-4.3 1.317-8.362 1.557-11.912-.461-7.072-4.025-9.648-15.739-10.035-23.243-.154-3.015-.026-11.503.4-14.575z"/><path fill="#F2CD8C" d="M149.696 229.121c3.739-10.693 12.419-7.251 24.799-2.737l-.111-.534.111.061c6.452-67.735 40.082-57.55 75.178-66.2v180.957c-15.661.548-31.528-6.024-46.398-19.254-16.577-14.745-31.301-23.697-32.031-54.012-4.297 1.314-8.364 1.555-11.911-.463-10.301-5.863-11.132-27.064-9.637-37.818z"/><path fill="#462917" d="M128.296 133.328c54.61-67.481 117.552-104.183 164.815-44.153 57.919 3.041 78.011 97.546 29.434 134.416 3.891-51.331-11.304-74.352-34.8-85.921-44.719 48.763-104.421-4.43-113.25 88.238l-21.432-11.162c-2.128-26.578 4.097-72.688-24.767-81.418z"/></svg></h2>
+    <h2 class="px-3 py-2 text-white font-bold">SARAVANA</h2>
+  </div>
+</div>
+<div class="m-3  p-2   bg-green-800 shadow-lg">
+  <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae inventore nisi, nesciunt, sed omnis porro excepturi quis officia iusto voluptatibus, optio facere. Quae maxime aliquid animi veniam odit cumque provident!</p>
+  <div class="flex mt-5">
+    <h2><svg xmlns="http://www.w3.org/2000/svg" class="size-10" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 494 511.5"><path fill="#D9E9F0" fill-rule="nonzero" d="M246.999 0c139.846 0 247 118.492 247 255.749 0 137.286-107.146 255.751-247 255.751C107.136 511.5 0 393.041 0 255.749 0 119.253 106.347 0 246.999 0z"/><path fill="#194794" fill-rule="nonzero" d="M443.262 410.755c-44.365 60.337-114.245 100.375-195.179 100.731a485.973 485.973 0 01-10.864-.202c-77.469-3.082-144.112-42.601-186.864-101.048 14.588-29.09 45.279-46.423 76.205-50.56 31.076-4.154 56.937-8.371 67.876-45.937 2.831 2.48 5.803 4.983 8.835 7.677 28.308 25.167 60.205 26.261 87.478-.041 2.24-2.168 4.433-4.208 6.53-6.193 13.959 31.067 46.917 36.552 74.708 41.926 28.807 5.565 57.181 26.462 71.275 53.647z"/><path fill="#D2A75F" fill-rule="nonzero" d="M297.279 315.189c7.303 16.248 19.804 25.504 34.034 31.396-48.137 35.317-114.594 33.276-164.102 3.093 14.996-8.076 22.505-19.772 27.209-35.947 2.83 2.479 5.812 4.982 8.849 7.685 28.31 25.169 60.208 26.261 87.481-.04 2.24-2.168 4.432-4.209 6.529-6.187z"/><path fill="#DBB26F" fill-rule="nonzero" d="M249.676 372.686c-28.788.127-57.743-7.941-82.465-23.008 14.94-8.044 22.641-19.923 27.217-35.947 2.838 2.479 5.804 4.982 8.841 7.685 14.869 13.218 30.742 19.795 46.407 19.253v32.017z"/><path fill="#E9BE79" d="M149.695 229.121c3.736-10.692 12.422-7.254 24.8-2.737-4.944-22.418.89-39.929 18.442-52.069 37.446-25.908 54.37-3.733 94.957-36.414 23.316 11.743 44.177 31.595 33.547 93.617 11.252-8.527 27.477-7.732 22.374 11.156l-6.972 19.747c-1.667 4.726-2.782 6.44-8.754 6.119-2.64-.14-5.293-1.156-7.94-2.906 2.445 29.138-11.701 38.645-29.404 55.732-27.267 26.312-59.166 25.226-87.468.048-16.578-14.745-31.301-23.7-32.035-54.014-4.3 1.317-8.362 1.557-11.912-.461-7.072-4.025-9.648-15.739-10.035-23.243-.154-3.015-.026-11.503.4-14.575z"/><path fill="#F2CD8C" d="M149.696 229.121c3.739-10.693 12.419-7.251 24.799-2.737l-.111-.534.111.061c6.452-67.735 40.082-57.55 75.178-66.2v180.957c-15.661.548-31.528-6.024-46.398-19.254-16.577-14.745-31.301-23.697-32.031-54.012-4.297 1.314-8.364 1.555-11.911-.463-10.301-5.863-11.132-27.064-9.637-37.818z"/><path fill="#462917" d="M128.296 133.328c54.61-67.481 117.552-104.183 164.815-44.153 57.919 3.041 78.011 97.546 29.434 134.416 3.891-51.331-11.304-74.352-34.8-85.921-44.719 48.763-104.421-4.43-113.25 88.238l-21.432-11.162c-2.128-26.578 4.097-72.688-24.767-81.418z"/></svg></h2>
+    <h2 class="px-3 py-2 text-white font-bold">MIKE</h2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- footer + subscribe div -->
+<div class="bg-blue-100">
+<div class="flex justify-center">
+<div class="bg-red-700 w-4/5  p-4 -my-10 font-medium  md:w-2/4">
+  <h2 class="text-white text-2xl md:text-4xl italic"><span class="text-blue-100">Subscribe</span> to our newsletter</h2>
+  <div class="flex mt-5">
+  <input class="w-10/12 h-10 p-2 outline-none text-xs md:text-lg" type="email" placeholder="Your Email Address">
+  <button class="bg-blue-950 text-white mx-2 p-2 transistion duration-300 hover:bg-blue-400 hover:text-black">Subscribe</button>
+</div>
+</div>
+</div>
+
+<div class="mt-14 p-2">
+<h1 class="text-black text-4xl font-bold pt-2 pl-3">NOSTRA</h1>
+<p class="pt-2 pl-3">The Standard chunk of Lorem ipsum used since the 1500s is reprodused below for those interest</p> 
+<div class="flex gap-5 pt-2 pl-3 mt-1">
+    <i class="fa-brands fa-instagram fa-2x"></i>
+    <i class="fa-brands fa-twitter fa-2x"></i>
+    <i class="fa-brands fa-facebook fa-2x"></i>
+
+</div>
+<p class="pt-2 pl-3 pb-2">&copy; 2024 Nostra.com</p>
+</div>
+</div>
+<script src="index.js"></script>
+     <script
+     src="https://kit.fontawesome.com/e83adca9f1.js"
+     crossorigin="anonymous"
+    ></script>
+    </body>
+</html>

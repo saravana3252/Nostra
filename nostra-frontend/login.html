@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="
+        https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/base.min.css
+        " rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="path/to/font-awesome/css/font-awesome.min.css"
+      />
+      <link rel="icon" href="./images/nLogo.jpg">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <form class="bg-slate-800 w-full h-screen flex  justify-center items-center" onsubmit="handleSubmitLogin(event)">
+         <div class="w-full max-w-md p-2 bg-orange-500  flex flex-col gap-3 justify-center items-center">
+            <h1 class="pt-2 text-2xl text-center font-bold">LOGIN IN YOUR ACCOUNT</h1>
+            <input id="email" type="email" placeholder="enter your email address" class="p-2 w-[95%] outline-none">
+            <div class="flex w-[95%]">
+                <input id="password" type="password" placeholder="enter your password" class="p-2  w-[90%] outline-none">
+                <button type="button" class="w-[10%] bg-slate-700 text-orange-500 text-center" onmousedown="showPass(event)" onmouseup="hidePass(event)"  ontouchstart="showPass(event)"
+                ontouchend="hidePass(event)"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            <button id="loginbtn" class="p-2 bg-gray-800 px-4 text-orange-400 hover:bg-gray-700">LOGIN</button>
+            <p>DON'T HAVE AN ACCOUNT? <a href="register.html" class="font-medium">REGISTER</a></p>
+
+         </div>
+        </form>
+        <script
+        src="https://kit.fontawesome.com/e83adca9f1.js"
+        crossorigin="anonymous"
+       ></script>
+    </body>
+</html>
