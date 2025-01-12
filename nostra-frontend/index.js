@@ -439,7 +439,7 @@ function hidePass(event){
     "debug": false,
     "newestOnTop": true,
     "progressBar": true,
-    "positionClass": "toast-top-right", // You can change to "toast-bottom-left", etc.
+    "positionClass": "toast-top-right",
     "preventDuplicates": false,
     "onclick": null,
     "showDuration": "300",
@@ -451,7 +451,7 @@ function hidePass(event){
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
   };
-
+y
 
 if(registerbtn){
     registerbtn.innerHTML="loading...";
