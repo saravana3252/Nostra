@@ -434,13 +434,24 @@ function hidePass(event){
     password:password
   }
 
-  Notiflix.Notify.init({
-    success: {
-      background: 'white',
-      textColor:"green",
-      fontWeight: 'bold',   
-    }
-})
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right", // You can change to "toast-bottom-left", etc.
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+
 
 if(registerbtn){
     registerbtn.innerHTML="loading...";
@@ -454,7 +465,8 @@ if(registerbtn){
         "Content-Type":"application/json"
     }
  }).then((response)=>response.json()).then(()=>{
-    Notiflix.Notify.success('user registered!');
+    toastr.success('user registered!')
+
     document.getElementById("name").value="";
   document.getElementById("email").value="";
   document.getElementById("password").value="";
@@ -481,13 +493,24 @@ if(registerbtn){
     password:password
   }
 
-  Notiflix.Notify.init({
-    success: {
-      background: 'white',
-      textColor:"green",
-      fontWeight: 'bold',   
-    }
-})
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right", 
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+
 
 if(loginbtn){
     loginbtn.innerHTML="loading...";
@@ -522,7 +545,7 @@ if(loginbtn){
         if(localStorage.getItem("nostra") !== null){
             let user = JSON.parse(localStorage.getItem("nostra"))
             console.log("User retrieved from localStorage:", user);  
-            Notiflix.Notify.success(`welcome ${user.name}`);
+            toastr.success(`welcome ${user.name}`);
             console.log(user)
             
         }
@@ -550,8 +573,7 @@ if(loginbtn){
     if (userJSON !== null) {
        
         localStorage.removeItem("nostra");
-        Notiflix.Notify.success("You have logged out successfully!");
-
+        toastr.success("You have logged out successfully!");
         if (loginElement) loginElement.innerHTML = "Login";
         if (loginElement1) loginElement1.innerHTML = "Login";
     } else {
