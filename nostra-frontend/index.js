@@ -522,7 +522,7 @@ if(loginbtn){
         if(localStorage.getItem("nostra") !== null){
             let user = JSON.parse(localStorage.getItem("nostra"))
             console.log("User retrieved from localStorage:", user);  
-            Notiflix.Notify.success(`welcome ${user.name}`);
+            // Notiflix.Notify.success(`welcome ${user.name}`);
             console.log(user)
             
         }
