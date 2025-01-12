@@ -11,7 +11,10 @@
         href="path/to/font-awesome/css/font-awesome.min.css"
       />
       <link rel="icon" href="./images/nLogo.jpg">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-3.2.6.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
        
@@ -79,7 +82,7 @@ html,body{
         <a  href="third.html" class="w-3/12 text-center  pt-0.5  transition duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">Contact Us</a>
     </div>
    <div  class="myLogin font-semibold border border-blue-600  justify-center items-center px-2 cursor-pointer  transition-all duration-300 hover:bg-blue-700 hover:text-white hidden lg:flex">
-    <a id="login" onclick="HandleLogin()"><i class="fa-solid fa-user pr-2"></i>LOGIN</a>
+    <p ><i class="fa-solid fa-user pr-2"></i><a id="login" onclick="HandleLogin()">LOGIN</a></p>
    </div>
     <div id="mobile-div" class="flex flex-col items-center pt-5 bg-blue-950 text-white gap-5 w-3/5 min-h-screen fixed top-0 -right-full transition-all duration-1000 z-50 lg:hidden">
         <button class="font-bold p-2 px-4  border border-white text-2xl" onclick="closeMenu()">X</button>
@@ -311,12 +314,6 @@ html,body{
 </div>
 </div>
 <script src="index.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-      <script
-      src="https://kit.fontawesome.com/e83adca9f1.js"
-      crossorigin="anonymous"
-     ></script>
      <script
      src="https://kit.fontawesome.com/e83adca9f1.js"
      crossorigin="anonymous"
